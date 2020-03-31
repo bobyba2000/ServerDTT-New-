@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ServerDTT_New_.ExtendedWindow.EWPointSummarized"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServerDTT_New_.ExtendedWindow"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="124*"/>
+            <ColumnDefinition Width="220*"/>
+            <ColumnDefinition Width="362*"/>
+        </Grid.ColumnDefinitions>
+        <MediaElement Name="soundFinishAll" LoadedBehavior="Manual" MediaEnded="SoundFinishAll_MediaEnded"/>
+        <MediaElement Name="videoPointSummarized" Grid.ColumnSpan="4" Stretch="Fill" LoadedBehavior="Manual" Visibility="Visible" MediaEnded="VideoPointSummarized_MediaEnded" MediaOpened="VideoPointSummarized_MediaOpened"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="225*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="145*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Row="1">
+                <TextBlock Name="txtBlockPoint" Foreground="White" FontFamily="Barlow Semi Condensed" Visibility="Visible"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="295*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="95*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Row="1">
+                <TextBlock Name="txtBlockName" Text="Thi Sinh" FontFamily="Open Sans" Foreground="White" Visibility="Hidden"/>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</UserControl>

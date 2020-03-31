@@ -1,0 +1,337 @@
+﻿<UserControl x:Class="ServerDTT_New_.ExtendedWindow.EWObstacles"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServerDTT_New_.ExtendedWindow"
+             mc:Ignorable="d" 
+              d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Viewbox Margin="100">
+            <TextBlock Name="textboxContent" Text="VƯỢT CHƯỚNG NGẠI VẬT" Foreground="White" FontWeight="Black"/>
+        </Viewbox>
+        <MediaElement Name="VideoIntro" Visibility="Hidden" LoadedBehavior="Manual" Stretch="Fill"/>
+
+        <!--Phần hàng ngang và câu hỏi-->
+        <Grid Name="gridRows" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200*"></RowDefinition>
+                <RowDefinition Height="120*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Video và background -->
+            <Grid Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" Grid.ColumnSpan="5">
+                <!--This element is always hidden, just use the loading sound-->
+                <MediaElement Name="VideoQuestionBox" Visibility="Hidden" LoadedBehavior="Manual" Stretch="Fill"/>
+
+                <Image Name="imgQuestionBox" Stretch="Fill" Visibility="Hidden"></Image>
+                <MediaElement Name="VideoShowAnswer" LoadedBehavior="Manual" Stretch=" Fill" Visibility="Hidden"></MediaElement>
+                <MediaElement Name="VideoTiming" LoadedBehavior="Manual" Stretch="Fill" Visibility="Hidden"/>
+            </Grid>
+
+            <!--Vis:Hidden Number TxtBlock-->
+            <Grid Grid.Row="0" Name="gridUpperPart">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150*"></ColumnDefinition>
+                    <ColumnDefinition Width="463*"></ColumnDefinition>
+                    <ColumnDefinition Width="34*"></ColumnDefinition>
+                    <ColumnDefinition Width="102*"></ColumnDefinition>
+                    <ColumnDefinition Width="51*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Name="imgRowNumber1" Grid.Column="2" Grid.Row="1" Stretch="Fill"/>
+                <Viewbox Grid.Column="2" Grid.Row="1">
+                    <TextBlock Text="1" Background="Transparent" Foreground="White" FontWeight="DemiBold"/>
+                </Viewbox>
+
+                <Image Name="imgRowNumber2" Grid.Column="2" Grid.Row="3" Stretch="Fill"/>
+                <Viewbox Grid.Column="2" Grid.Row="3">
+                    <TextBlock Text="2" Background="Transparent" Foreground="White" FontWeight="DemiBold"/>
+                </Viewbox>
+
+                <Image Name="imgRowNumber3" Grid.Column="2" Grid.Row="5" Stretch="Fill"/>
+                <Viewbox Grid.Column="2" Grid.Row="5">
+                    <TextBlock Text="3" Background="Transparent" Foreground="White" FontWeight="DemiBold"/>
+                </Viewbox>
+
+                <Image Name="imgRowNumber4" Grid.Column="2" Grid.Row="7" Stretch="Fill"/>
+                <Viewbox Grid.Column="2" Grid.Row="7">
+                    <TextBlock Text="4" Background="Transparent" Foreground="White" FontWeight="DemiBold"/>
+                </Viewbox>
+
+                <Grid Name="gridRow1" Grid.Column="1" Grid.Row="1"/>
+                <Grid Name="gridRow2" Grid.Column="1" Grid.Row="3"/>
+                <Grid Name="gridRow3" Grid.Column="1" Grid.Row="5"/>
+                <Grid Name="gridRow4" Grid.Column="1" Grid.Row="7"/>
+
+            </Grid>
+
+            <!--Vis:Visible-->
+            <Grid Grid.Row="1" Name="gridLowerPart">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="37*"></RowDefinition>
+                    <RowDefinition Height="102*"></RowDefinition>
+                    <RowDefinition Height="30*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="24*"></ColumnDefinition>
+                    <ColumnDefinition Width="155*"></ColumnDefinition>
+                    <ColumnDefinition Width="21*"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <!-- Câu hỏi -->
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <TextBlock Name="textboxQuestion" FontSize="40" Margin="10 5" Foreground="White" HorizontalAlignment="Stretch" TextWrapping="Wrap" TextAlignment="Justify"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--Hiển thị câu trả lời-->
+        <Grid Visibility="Hidden" Name="gridShowAns" Grid.IsSharedSizeScope="True">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75*"></RowDefinition>
+
+                <RowDefinition Height="32*"></RowDefinition>
+                <RowDefinition Height="36*"></RowDefinition>
+
+                <RowDefinition Height="30*"></RowDefinition>
+                <RowDefinition Height="42*"></RowDefinition>
+
+                <RowDefinition Height="31*"></RowDefinition>
+                <RowDefinition Height="42*"></RowDefinition>
+
+                <RowDefinition Height="30*"></RowDefinition>
+
+                <RowDefinition Height="42*"></RowDefinition>
+                <RowDefinition Height="91*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Image Name="imgShowAnswer" Visibility="Hidden" Grid.RowSpan="10" Stretch="Fill" Margin="0,0,0,0.499"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="437*"></ColumnDefinition>
+                    <ColumnDefinition Width="144*"></ColumnDefinition>
+                    <ColumnDefinition Width="219*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxName1" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="Black"/>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="429*"></ColumnDefinition>
+                    <ColumnDefinition Width="261*"></ColumnDefinition>
+                    <ColumnDefinition Width="110*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxAnswer1" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="White" ></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="219*"></ColumnDefinition>
+                    <ColumnDefinition Width="140*"></ColumnDefinition>
+                    <ColumnDefinition Width="441*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxName2" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="Black"></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="108*"></ColumnDefinition>
+                    <ColumnDefinition Width="263*"></ColumnDefinition>
+                    <ColumnDefinition Width="429*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxAnswer2" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="White"></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="5" Margin="0,0.233,0,1.767">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="435*"></ColumnDefinition>
+                    <ColumnDefinition Width="143*"></ColumnDefinition>
+                    <ColumnDefinition Width="222*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxName3" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="Black"></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="428*"></ColumnDefinition>
+                    <ColumnDefinition Width="259*"></ColumnDefinition>
+                    <ColumnDefinition Width="113*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxAnswer3" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="White"></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="218*"></ColumnDefinition>
+                    <ColumnDefinition Width="139*"></ColumnDefinition>
+                    <ColumnDefinition Width="443*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxName4" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="Black"></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="114*"></ColumnDefinition>
+                    <ColumnDefinition Width="255*"></ColumnDefinition>
+                    <ColumnDefinition Width="431*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <TextBlock Name="textboxAnswer4" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="40" FontWeight="DemiBold" Foreground="White"></TextBlock>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--Phần ảnh gợi ý-->
+        <Grid  Name="gridKeyImage" Visibility="Hidden">
+            <Grid Name="KeyImage" Panel.ZIndex="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition Height="8.5*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Image Name="imgObstacle" Stretch="Fill"/>
+                </Grid>
+            </Grid>
+
+            <Grid Name="gridFirstLayer" Panel.ZIndex="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition Height="8.5*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1">
+
+                    <Grid>
+                        <Image Name="imgHider1" Stretch="Fill"></Image>
+                    </Grid>
+                    <Grid >
+                        <Image Name="imgHider2" Stretch="Fill"></Image>
+                    </Grid>
+                    <Grid >
+                        <Image Name="imgHider3" Stretch="Fill"></Image>
+                    </Grid>
+                    <Grid >
+                        <Image Name="imgHider4" Stretch="Fill"></Image>
+                    </Grid>
+
+                </Grid>
+            </Grid>
+
+            <Grid Name="gridFinalLayer" Panel.ZIndex="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition Height="8.5*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1">
+
+                    <Image Name="imgHider5"  Stretch="Fill"></Image>
+
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <!-- Nhấn chuông -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="277*"></RowDefinition>
+                <RowDefinition Height="173*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"></RowDefinition>
+                    <RowDefinition Height="143*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="83*"></ColumnDefinition>
+                    <ColumnDefinition Width="717*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Row="0" Grid.Column="1" Margin="0,0,322,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Visibility="Hidden" Name="borderBell1" Grid.Column="0" BorderThickness="1" BorderBrush="White" Background="#821e03">
+                        <TextBlock Name="textboxBell1" Text="Thí sinh 1" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    </Border>
+
+                    <Border Visibility="Hidden" Name="borderBell2" Grid.Column="1" BorderThickness="1" BorderBrush="White" Background="#821e03">
+                        <TextBlock Name="textboxBell2" Text="Thí sinh 2" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    </Border>
+
+                    <Border Visibility="Hidden" Name="borderBell3" Grid.Column="2" BorderThickness="1" BorderBrush="White" Background="#821e03">
+                        <TextBlock Name="textboxBell3" Text="Thí sinh 3" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    </Border>
+
+                    <Border Visibility="Hidden" Name="borderBell4" Grid.Column="3" BorderThickness="1" BorderBrush="White" Background="#821e03">
+                        <TextBlock Name="textboxBell4" Text="Thí sinh 4" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    </Border>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

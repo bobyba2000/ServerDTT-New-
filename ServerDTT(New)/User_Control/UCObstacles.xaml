@@ -1,0 +1,221 @@
+﻿<UserControl x:Class="ServerDTT_New_.User_Control.UCObstacles"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServerDTT_New_.User_Control"
+             mc:Ignorable="d" 
+               d:DesignHeight="450" d:DesignWidth="800"
+             Background="#110e47">
+    <Grid>
+        <!--Khung lớn-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Tiêu đề -->
+        <Grid Grid.Row="0" Grid.Column="0">
+            <TextBlock Name="TitleTextBlock" Text="VƯỢT CHƯỚNG NGẠI VẬT" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+        </Grid>
+
+        <!--Nút điều khiển-->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <StackPanel Orientation="Horizontal" >
+                <Button x:Name="btnIntroVideo" Margin="10,5,5,5" Width="85" Height="40" Content="Video Intro" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnIntroVideo_Click"/>
+                <Button x:Name="btnIntroMusic" Margin ="5" Width="80" Height="40" Content="Nhạc Intro" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnIntroMusic_Click" />
+                <Button x:Name="btnShowRows" Margin ="5" Width="80" Height="40" Content="Hiện hàng ngang" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnShowRows_Click"/>
+                <Button x:Name="btnChooseRow" Margin ="5" Width="80" Height="40" Content="Chọn câu hỏi" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnChooseRow_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <StackPanel Orientation="Horizontal" >
+                <Button x:Name="btnStartTiming" Margin="10,5,5,5" Width="85" Height="40" Content="Tính giờ" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnStartTiming_Click"/>
+                <Button x:Name="btnShowAnswer" Margin ="5" Width="80" Height="40" Content="Hiện trả lời" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnShowAnswer_Click"/>
+                <Button x:Name="btnAddPoint" Margin ="5" Width="80" Height="40" Content="Cộng điểm" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnAddPoint_Click"/>
+                <Button x:Name="btnShowHint" Margin ="5" Width="80" Height="40" Content="Hiện gợi ý" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnShowHint_Click"/>
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Name="comboBoxNumber" Grid.Column="1" SelectedIndex="0" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Height="51" Width="86" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBlock Text="Chọn câu hỏi số"  FontSize="15" Foreground="#EBEBEB" TextAlignment="Center" HorizontalAlignment="Right" Height="44" Margin="18,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
+        </Grid>
+
+        <!--Quản lí thí sinh-->
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Cụm tên thí sinh-->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <TextBlock Name="textboxName" Text="Tên" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <TextBlock Name="textboxName1" Text="Thí sinh 1" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <TextBlock Name="textboxName2" Text="Thí sinh 2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="0">
+                <TextBlock Name="textboxName3" Text="Thí sinh 3" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.Column="0">
+                <TextBlock Name="textboxName4" Text="Thí sinh 4" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <!--Cụm câu trả lời-->
+            <Grid Grid.Row="0" Grid.Column="1">
+                <TextBlock Text="Câu trả lời" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <TextBox Name="textboxAns1" Text="Trả lời nè!" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <TextBox Name="textboxAns2" Text="Trả lời nè!"  TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="1">
+                <TextBox Name="textboxAns3" Text="Trả lời nè!" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15"/>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.Column="1">
+                <TextBox Name="textboxAns4" Text="Trả lời nè!" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15"/>
+            </Grid>
+
+            <!--Cụm checkbox-->
+            <Grid Grid.Row="0" Grid.Column="2">
+                <TextBlock Name="textboxCheckBox" Text="Chọn thí sinh" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="2">
+                <CheckBox Name="checkbox1" IsChecked="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="2">
+                <CheckBox Name="checkbox2" IsChecked="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="2">
+                <CheckBox Name="checkbox3" IsChecked="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.Column="2">
+                <CheckBox Name="checkbox4" IsChecked="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <!--Chuông-->
+            <Grid Grid.Row="0" Grid.Column="3">
+                <TextBlock Text="Chuông" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="3">
+                <TextBlock Name="textboxBell1" Visibility="Hidden" Text="Chuông" Background="Red" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="3">
+                <TextBlock Name="textboxBell2" Visibility="Hidden" Text="Chuông" Background="Red" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="3">
+                <TextBlock Name="textboxBell3" Visibility="Hidden" Text="Chuông" Background="Red" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.Column="3">
+                <TextBlock Name="textboxBell4" Visibility="Hidden" Text="Chuông" Background="Red" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="#EBEBEB"/>
+            </Grid>
+        </Grid>
+
+        <!--Nút điều khiển chuông-->
+        <!--Câu hỏi và đáp án-->
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="122*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+
+                <StackPanel Orientation="Horizontal" >
+                    <Button x:Name="btnEliminate" Margin="0,5,5,5" Width="85" Height="40" Content="Loại thí sinh" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnEliminate_Click"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <StackPanel Orientation="Horizontal" >
+                    <Button x:Name="btnAddKeyPoint" Margin="0,5,5,5" Width="120" Height="40" Content="Cộng điểm gợi ý" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnAddKeyPoint_Click"/>
+                    <Button x:Name="btnShowAllHint" Margin ="0,5,5,5" Width="100" Height="40" Content="Mở hết gợi ý" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="btnShowAllHint_Click"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Name="textboxCurrentStudent" Text="TS hiện tại: " FontSize="10" Margin="10,0,0,10" Foreground="#EBEBEB" Width="155"></TextBlock>
+                        <TextBlock Name="textboxCurrentID" Text="Vị trí: " FontSize="10" Margin="10,0,0,10" Foreground="#EBEBEB" Width="50"></TextBlock>
+                    </StackPanel>
+
+                    <TextBlock Text="Câu hỏi" FontSize="10" Margin="10,0,0,0" Foreground="#EBEBEB"></TextBlock>
+                    <TextBox Name="textboxQuestion" Margin="10,0,10,0" TextWrapping="Wrap" FontSize="15" Height="35"/>
+                    <TextBlock Text="Đáp án" Height="15" Foreground="#EBEBEB" FontSize="10" Margin="10,0,0,0" ></TextBlock>
+                    <TextBox Name="textboxTrueAnswer" Margin="10,0,10,0" TextWrapping="Wrap" FontSize="15"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!-- Back Up Question -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnBackUpQuestion" Grid.Column="1" Width="85" Height="40" Content="Đề dự phòng" FontSize="15" Background="#323456" Foreground="#EBEBEB" Click="BtnBackUpQuestion_Click"/>
+        </Grid>
+
+        <!--Media-->
+        <MediaElement Name="IntroMusic" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="41"/>
+        <MediaElement Name="ShowRowsSound" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="56,10,0,0" VerticalAlignment="Top" Width="41"/>
+        <MediaElement Name="RowChosenSound" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="56,10,0,0" VerticalAlignment="Top" Width="41"/>
+        <MediaElement Name="TrueRowSound" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="102,10,0,0" VerticalAlignment="Top" Width="41"/>
+        <MediaElement Name="ShowHintSound" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="148,10,0,0" VerticalAlignment="Top" Width="41"/>
+        <MediaElement Name="TrueKeySound" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="41" Grid.Row="2"/>
+        <MediaElement Name="EliminateSound" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="56,10,0,0" VerticalAlignment="Top" Width="41" Grid.Row="2"/>
+        <MediaElement Name="BellSound" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="102,10,0,0" VerticalAlignment="Top" Width="41" Grid.Row="2"/>
+
+
+
+
+    </Grid>
+</UserControl>

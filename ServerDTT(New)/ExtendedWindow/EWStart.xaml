@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="ServerDTT_New_.ExtendedWindow.EWStart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServerDTT_New_.ExtendedWindow"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid Name="gridIntro">
+            <Viewbox Margin="150,50,150,50">
+                <TextBlock Text="KHỞI ĐỘNG" FontWeight="Black" Foreground="White"/>
+            </Viewbox>
+            <MediaElement Name="videoIntro" Stretch="Fill" LoadedBehavior="Manual" MediaEnded="VideoIntro_MediaEnded"/>
+            <MediaElement Name="soundIntro" Stretch="Fill" LoadedBehavior="Manual"/>
+        </Grid>
+        <Grid Name="gridStudentContest">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="175*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="35*"/>
+            </Grid.RowDefinitions>
+            <MediaElement Name="videoStudentStart" Grid.RowSpan="6" Stretch="Fill" LoadedBehavior="Manual" MediaEnded="VideoStudentStart_MediaEnded"/>
+            <MediaElement Name="soundStart" Grid.RowSpan="6" Stretch="Fill" LoadedBehavior="Manual" MediaEnded="SoundStart_MediaEnded"/>
+            <MediaElement Name="soundTrue" Grid.RowSpan="6" Stretch="Fill" LoadedBehavior="Manual"/>
+            <MediaElement Name="soundFalse" Grid.RowSpan="6" Stretch="Fill" LoadedBehavior="Manual"/>
+            <MediaElement Name="soundFinish" Grid.RowSpan="6" Stretch="Fill" LoadedBehavior="Manual"/>
+            <Viewbox Grid.Row="1" Margin="100,20,100,20">
+                <TextBlock Name="txtBlockStudent" FontFamily="Open Sans" Foreground="White"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1" Margin="200,20,200,20">
+                <Image Name="imgQuestion" Stretch="Fill"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1" Margin="200,20,200,20">
+                <MediaElement Name="mediaQuestion" LoadedBehavior="Manual" Stretch="Fill"/>
+            </Viewbox>
+            <Grid Name="gridStudentsName" Grid.Row="2" Margin="0,5,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="98*"/>
+                    <ColumnDefinition Width="122*"/>
+                    <ColumnDefinition Width="122*"/>
+                    <ColumnDefinition Width="122*"/>
+                    <ColumnDefinition Width="122*"/>
+                    <ColumnDefinition Width="214*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="0.75*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <Grid Grid.Row="3" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="95*"/>
+                    <ColumnDefinition Width="490*"/>
+                    <ColumnDefinition Width="215*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="txtBlockQuestion" Grid.Column="1" FontFamily="Open Sans" Foreground="White" FontSize="40" TextWrapping="Wrap"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="630*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="70*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <TextBlock Name="txtBlockPoint" Foreground="White" FontFamily="Barlow Semi Condensed"/>
+                </Viewbox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
